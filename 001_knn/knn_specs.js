@@ -126,7 +126,7 @@ describe('Testing the basic KNN functionality.', function(){
 
 			   	Example Output: [ [.1,0] , [.2,0] , [.3, 1] , [.4,0] ... ]
 			   */
-			xit('has function _distances, which works as expected', function(){
+			it('has function _distances, which works as expected', function(){
 				var knn = new KNN(10);
 				expect(typeof knn._distances).to.equal('function');
 				//Making fake data

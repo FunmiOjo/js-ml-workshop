@@ -28,5 +28,11 @@ KNN.prototype._distance = function(vector1, vector2) {
   return euclideanNorm(subtractVectors(vector1, vector2))
 }
 
+KNN.prototype._distances = function(unclassifiedVector, trainingData) {
+  let distances = trainingData.map((dataPoint) => {
+    return [this._distance(unclassifiedVector, dataPoint[0]), dataPoint[1]]
+  })
+  return distances
+}
 
 module.exports = KNN
