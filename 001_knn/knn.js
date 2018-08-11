@@ -44,4 +44,28 @@ KNN.prototype._sorted = function(arr) {
   })
 }
 
+KNN.prototype._majority = function(k, sortedClassifications) {
+  let frequencies = []
+  sortedClassifications = sortedClassifications.slice(0, k)
+  let classFrequency
+  for (let i = 0; i < sortedClassifications.length; i++) {
+    classFrequency = frequencies[sortedClassifications[i]]
+    if (!classFrequency) {
+      frequencies[sortedClassifications[i]] = 1
+    } else {
+      frequencies[sortedClassifications[i]]++
+    }
+  }
+
+  let mostCommonClassification
+  let maxCommonValue = -Infinity
+  for (let classification = 0; classification < frequencies.length; classification++) {
+    if (frequencies[classification] > maxCommonValue) {
+      maxCommonValue = frequencies[classification]
+      mostCommonClassification = classification
+    }
+  }
+  return mostCommonClassification
+}
+
 module.exports = KNN

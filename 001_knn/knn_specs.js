@@ -174,7 +174,7 @@ describe('Testing the basic KNN functionality.', function(){
 			  --knn._majority(3,[1,2,1,2,2,2,1,1,1,1]) would return 1, because 1 is the most common element among the first three.
 			  --knn._majority(5,[1,2,1,2,2,2,1,1,1,1]) would return 2, because 2 is the most common element among the first five.
 			*/
-			xit('has function _majority, which works as expected', function(){
+			it('has function _majority, which works as expected', function(){
 				var knn = new KNN(3);
 				expect(typeof knn._majority).to.equal('function');
 				expect(knn._majority(3, [1, 2, 1, 2, 2, 2, 1, 1, 1, 1])).to.equal(1)
