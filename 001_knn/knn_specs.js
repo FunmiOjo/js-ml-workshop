@@ -148,7 +148,7 @@ describe('Testing the basic KNN functionality.', function(){
 			  ordered by the distances that (used to) accompany each classification.
 			  Example Output: [1,0,1,0,2,3,2,1,1,2,2,0,0]
 			*/
-			xit('has function _sorted, which works as expected', function(){
+			it('has function _sorted, which works as expected', function(){
 				var knn = new KNN(3);
 				expect(typeof knn._sorted).to.equal('function');
 				var sorted = knn._sorted([[100, 0], [10, 1], [20, 1], [110, 0], [120, 1]]);

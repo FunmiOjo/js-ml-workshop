@@ -18,7 +18,6 @@ function subtractVectors(vector1, vector2) {
 
 function euclideanNorm(vector) {
   let norm = Math.sqrt(vector.reduce(function(accum, current) {
-    //console.log("accum + (current * current)", accum + (current * current));
     return accum + (current * current)
   }, 0))
   return norm
@@ -33,6 +32,16 @@ KNN.prototype._distances = function(unclassifiedVector, trainingData) {
     return [this._distance(unclassifiedVector, dataPoint[0]), dataPoint[1]]
   })
   return distances
+}
+
+function compare(a, b) {
+  return a[0] - b[0]
+}
+
+KNN.prototype._sorted = function(arr) {
+  return arr.sort(compare).map((elem) => {
+    return elem[1]
+  })
 }
 
 module.exports = KNN
