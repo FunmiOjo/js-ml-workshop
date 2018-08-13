@@ -95,7 +95,7 @@ describe('Testing the basic KNN functionality.', function(){
 			   Euclidean norm.
 
 			 */
-			it('has function _distance, which works as expected', function(){
+			xit('has function _distance, which works as expected', function(){
 				var knn = new KNN(3);
 				expect(typeof knn._distance).to.equal('function');
 				var one_dim = knn._distance([0], [1]);
@@ -126,7 +126,7 @@ describe('Testing the basic KNN functionality.', function(){
 
 			   	Example Output: [ [.1,0] , [.2,0] , [.3, 1] , [.4,0] ... ]
 			   */
-			it('has function _distances, which works as expected', function(){
+			xit('has function _distances, which works as expected', function(){
 				var knn = new KNN(10);
 				expect(typeof knn._distances).to.equal('function');
 				//Making fake data
@@ -148,7 +148,7 @@ describe('Testing the basic KNN functionality.', function(){
 			  ordered by the distances that (used to) accompany each classification.
 			  Example Output: [1,0,1,0,2,3,2,1,1,2,2,0,0]
 			*/
-			it('has function _sorted, which works as expected', function(){
+			xit('has function _sorted, which works as expected', function(){
 				var knn = new KNN(3);
 				expect(typeof knn._sorted).to.equal('function');
 				var sorted = knn._sorted([[100, 0], [10, 1], [20, 1], [110, 0], [120, 1]]);
@@ -174,7 +174,7 @@ describe('Testing the basic KNN functionality.', function(){
 			  --knn._majority(3,[1,2,1,2,2,2,1,1,1,1]) would return 1, because 1 is the most common element among the first three.
 			  --knn._majority(5,[1,2,1,2,2,2,1,1,1,1]) would return 2, because 2 is the most common element among the first five.
 			*/
-			it('has function _majority, which works as expected', function(){
+			xit('has function _majority, which works as expected', function(){
 				var knn = new KNN(3);
 				expect(typeof knn._majority).to.equal('function');
 				expect(knn._majority(3, [1, 2, 1, 2, 2, 2, 1, 1, 1, 1])).to.equal(1)
@@ -186,7 +186,7 @@ describe('Testing the basic KNN functionality.', function(){
 		/* The purpose of predictSingle is to take a single vector
 		   and use the training-data in the knn function to predict
 		   what classification it has. */
-		xit('has a predictSingle function, which takes a single vector', function(){
+		it('has a predictSingle function, which takes a single vector', function(){
 			var knn = new KNN(10);
 			expect(typeof knn.predictSingle).to.equal('function');
 			var knn = new KNN(10);

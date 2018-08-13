@@ -68,4 +68,8 @@ KNN.prototype._majority = function(k, sortedClassifications) {
   return mostCommonClassification
 }
 
+KNN.prototype.predictSingle = function(vector) {
+  return this._majority(5, this._sorted(this._distances(vector, this.points)))
+}
+
 module.exports = KNN
